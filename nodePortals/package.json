@@ -1,0 +1,15 @@
+{
+  "name": "nodePortals",
+  "version": "0.0.0",
+  "description": "nodePortals",
+  "main": "app.js",
+  "author": {
+    "name": "bo",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
