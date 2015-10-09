@@ -2,6 +2,14 @@
 html(lang='en')
   head
     include ./includes/head.jade
-    link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    include ./includes/header.jade
+    // page container
+    #page-container
+        include ./includes/navigation.jade
+        // page content
+        #page-content
+            block content
+        include ./includes/footer.jade
+    include ./includes/footer_scripts.jade
+    block end_imports
