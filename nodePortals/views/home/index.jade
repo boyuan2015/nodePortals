@@ -1,5 +1,12 @@
 ﻿extends ../layout
 
+block title
+    #{title}
+
 block content
-  h1= title
-  p Welcome to home #{title}
+    // content wrap
+    #wrap
+        #page-heading
+            h1 Dashboard
+        .container
+            .row

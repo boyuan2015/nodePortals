@@ -2,3 +2,22 @@
     ul.acc-menu#sidebar
         li
             a(href="/")
+                i.fa.fa-dashboard
+                span Dashboard
+        li.divider
+        li#liRestaurants
+            a(href="javascript:;")
+                i.fa.fa-cutlery
+                span Restaurants
+            ul.acc-menu
+                li
+                    a(href="/restaurant") Restaurants List
+                // Selected Restaurant Section
+                li#liSelectedRestaurant
+        li
+            a(href="/transaction")
+                i.fa.fa-money
+                span Transactions
+        // if is Sudo user
+        // li
+

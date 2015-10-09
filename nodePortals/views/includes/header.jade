@@ -1,4 +1,24 @@
 ﻿// header
-header(class="navbar navbar-inverse navbarfixed-top")
-    div(class="navbar-header pull-left")
+header.navbar.navbar-inverse.navbarfixed-top(role="banner")
+    a.tooltips#leftmenu-trigger(data-toggle="tooltip" data-placement="right" title="Toggle Sidebar")
+    .navbar-header.pull-left
         a.navbar-brand(href="/") TableSafe
+
+        ul.nav.navbar-nav.pull-right.toolbar
+            li.dropdown
+                a.dropdown-toggle.username(href="#" data-toggle="dropdown") 
+                ul.dropdown-menu.userinfo.arrow
+                    li.username
+                        .pull-left
+                            i.fa.fa-3x.fa-user
+                        .pull-right
+                            h5 Hello, 
+                    li.userlinks
+                        ul.dropdown-menu
+                            li
+                                a(href='/account/editProfile') Edit Profile
+                                    i.pull-right.fa.fa-pencil
+                            li.divider
+                            li
+                                a.text-right(href='/account/logout') Sign Out
+                                    i.fa.fa-sign-out
