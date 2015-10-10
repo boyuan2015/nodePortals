@@ -1,7 +1,7 @@
 ﻿extends ../layout
 
 block title
-    #{title}
+    title #{title} | TableSafe Portal
 
 block content
     // content wrap
@@ -10,3 +10,14 @@ block content
             h1 Dashboard
         .container
             .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 Control Panel
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            p You are logged in as username
+                            p
+                                a(href='/account/logout') Logout

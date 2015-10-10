@@ -1,4 +1,6 @@
-﻿nav#page-leftbar(role="navigation")
+﻿// TODO: isSudoUser
+// navigation
+nav#page-leftbar(role="navigation")
     ul.acc-menu#sidebar
         li
             a(href="/")
@@ -12,12 +14,89 @@
             ul.acc-menu
                 li
                     a(href="/restaurant") Restaurants List
+            - var isSudoUser = true
+            if isSudoUser
+                li
+                    a(href='/restaurant/create') Add Restaurant
                 // Selected Restaurant Section
                 li#liSelectedRestaurant
-        li
+                    a.a-selected-restaurant(href='javascript:;')
+                        label Selected Restaurant
+                        span#spanSelectedRestaurantName(data-restaurant-id="") &nbsp;&nbsp;&nbsp;&nbsp;
+                    ul.acc-menu
+                        li
+                            a#aSelectedRestaurantView(href='#') View Restaurant
+                        li#liSelectedRestaurantEdit
+                            a#aSelectedRestaurantEdit(href='#') Edit Restaurant
+                        li#liPos
+                            a#aSelectedRestaurantPosEdit(href='#') Point of Sale
+                        li#liPaymentMethods
+                            a(href='javascript:;')
+                                span Payment Methods
+                            ul.acc-menu
+                                li#liRestaurantPaymentMethods
+                                    a(href='/paymentmethods/paymentlist') Payment Method List
+                                li#liAddPaymentMethods
+                                    a(href='/paymentmethods/add') Add Payment Method
+                        li#liSurvey
+                            a(href='javascript:;')
+                                span Surveys
+                            ul.acc-menu
+                                li#liRestaurantSurvey
+                                    a(href='/survey/surveylist') AdvertisementList
+                                li#liScheduledSurvey
+                                    a(href='/survey/schedule') Scheduled Surveys
+                                li#liAddSurvey
+                                    a(href='/survey/create') Add Survey
+                        li#liAds
+                            a(href='javascript:;')
+                                span Advertisements
+                            ul.acc-menu
+                                li#liRestaurantAdvertisement
+                                    a(href='/ads/surveylist') Advertisement List
+                                li#liScheduledAdvertisement
+                                    a(href='/ads/schedule') Scheduled Advertisement
+                                li#liAddAdvertisement
+                                    a(href='/ads/create') Add Advertisement 
+                        li#liHardware
+                            a(href='/hardware/baseStation') Hardware
+                        li#liRestaurantUsers
+                            a(href='javascript:;')
+                                span Restaurant Users
+                            ul.acc-menu
+                                li
+                                    a#aSelectedRestaurantUsers(href='#') User List
+                                li#liAddUser
+                                    a(href='/user/create') Add User
+                                li#liAddExistingUser
+                                    a(href='/user/add') Add Existing User
+        li                
             a(href="/transaction")
                 i.fa.fa-money
                 span Transactions
-        // if is Sudo user
-        // li
+        if isSudoUser
+        li
+            a(href='javascript:;')
+                i.fa.fa-cog
+                span System
+            ul.acc-menu
+                li
+                    a(href='/system/createRail') Add RAIL
+                li
+                    a(href='/survey') Surveys List
+
+        if isSudoUser
+        li
+            a(href='javascript:;')
+                i.fa.fa-list
+                span Reports
+            ul.acc-menu
+                li
+                    a(href='/report/reportOne') Transaction Report
+                li
+                    a(href='/report/reportTwo') Server Report
+                li
+                    a(href='/report/reportThree') Survey Report
+
+
 

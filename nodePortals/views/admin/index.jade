@@ -1,0 +1,36 @@
+﻿extends ../layout
+
+block title
+    title #{title} | TableSafe Portal
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(hef='/') Dashboard
+                li Administration
+            h1 Admin Panel
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 Control Panel
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            .col-md-2
+                                a.shortcut-titles.tiles-inverse(href='/admin/create')
+                                    .tiles-body
+                                        .pull-left
+                                            i.fa.fa-user
+                                    .tiles-footer Add User
+                            .col-md-2
+                                a.shortcut-tiles.tiles-inverse(href='/admin/users')
+                                    .tiles-body
+                                        .pull-left
+                                            i.fa.fa-users
+                                    .tiles-footer User Management
