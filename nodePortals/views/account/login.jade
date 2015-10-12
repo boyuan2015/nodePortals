@@ -11,6 +11,11 @@ block content
             form.form-horizontal(action='/account/login' method='POST' style='margin-bottom: 0px !important;')
                 .panel.panel-primary
                     .panel-body
+                        if res_message != ''
+                            .alert(res_alert_class)
+                                a.close(data-dismiss='alert') x
+                                strong #{res_message}
+
                         .alert.alert-success.alert-dismissible#alertBox(role='alert' style='display: none;')
                             button.close(type='button')
                                 span(aria-hidden='true') &times
@@ -30,7 +35,7 @@ block content
                                 .input-group
                                     span.input-group-addon
                                         i.fa.fa-user
-                                    input.form-control#password(type='text' name='password' placeholder='Password' required)
+                                    input.form-control#password(type='text' name='password' placeholder='Password')
                     .panel-footer
                         span.pull-left.btn.btn-default.ladda-button#btnForgotPassword(data-style='expand-right') Forgot password?
                         .pull-right

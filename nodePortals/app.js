@@ -10,6 +10,9 @@ var bodyParser = require('body-parser');
 var routes2 = require('./routes/routes');
 var http = require('http');
 var path = require('path');
+//var cookieParser = require('cookie-parser');
+//var cookieSession = require('cookie-session');
+//var nodeSession = require('node-session');
 
 var app = express();
 
@@ -27,6 +30,14 @@ app.use(bodyParser.urlencoded({
 //app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use(cookieParser());
+//app.use(cookieSession({ secret: 'tsafe node portal' }));
+//app.use(nodeSession());
+
+//app.use(function (req, res, next) {
+//    res.locals.session = req.session;
+//    next();
+//});
 
 // development only
 //if ('development' == app.get('env')) {
