@@ -1,0 +1,40 @@
+﻿extends ../layout_blank
+
+block title
+    title Login | TableSafe Portal
+
+block content
+    .focusedform
+        .verticalcenter
+            a(href='/')
+                img.brand(src='/assets/img/logo/table-safe-logo-1-0.png' alt='TableSafe')
+            form.form-horizontal(action='/account/login' method='POST' style='margin-bottom: 0px !important;')
+                .panel.panel-primary
+                    .panel-body
+                        .alert.alert-success.alert-dismissible#alertBox(role='alert' style='display: none;')
+                            button.close(type='button')
+                                span(aria-hidden='true') &times
+                                span.sr-only Close
+                            strong
+                                span#alertType [TYPE]
+                            span#alertMessage [ERROR MESSAGE]
+                        h4.text-center(style='margin-bottom: 25px;') Sign in | TableSafe Portal
+                        .form-group
+                            .col-sm-12
+                                .input-group
+                                    span.input-group-addon
+                                        i.fa.fa-user
+                                    input.form-control#username(type='text' name='username' placeholder='Username' required)
+                        .form-group
+                            .col-sm-12
+                                .input-group
+                                    span.input-group-addon
+                                        i.fa.fa-user
+                                    input.form-control#password(type='text' name='password' placeholder='Password' required)
+                    .panel-footer
+                        span.pull-left.btn.btn-default.ladda-button#btnForgotPassword(data-style='expand-right') Forgot password?
+                        .pull-right
+                            button.btn.btn-primary.ladda-button#btnSignIn(type='submit' data-style='expand-left') Sign In
+
+block end_imports
+    <script src="/assets/js/vw-custom/vw-login.js"></script>

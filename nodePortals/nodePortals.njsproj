@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="controllers\account_controller.js" />
     <Compile Include="controllers\admin_controller.js" />
     <Compile Include="controllers\company_controller.js" />
     <Compile Include="controllers\home_controller.js" />
@@ -43,6 +44,7 @@
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="views\account\login.jade" />
     <Content Include="views\admin\index.jade" />
     <Content Include="views\company\index.jade" />
     <Content Include="views\home\index.jade" />
@@ -52,6 +54,7 @@
     <Content Include="views\includes\header.jade" />
     <Content Include="views\includes\navigation.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\layout_blank.jade" />
     <Content Include="views\pos\edit.jade" />
     <Content Include="views\report\index.jade" />
     <Content Include="views\system\createRail.jade" />
