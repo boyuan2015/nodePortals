@@ -1,0 +1,54 @@
+﻿extends ../layout
+
+block title
+    title Add RAIL | TableSafe Portal
+
+block content
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li System
+                li Add RAIL
+            h1 Add RAIL
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 RAIL Details
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body#panelBodyRail
+                        - var status = ''
+                        if status !== null
+                            Something
+                        form.form-horizontal#frmCreateRail(name='frmCreateRail' method='POST')
+                            .accordion-group#accordioninPanelRailsAdd
+                                .accordion-item(class='collapse.in')
+                                    a.accordion-title(data-toggle='collapse' data-parent='#accordioninPanelRailsAdd' href='#collapseinRailsAdd')
+                                        h4 RAIL
+                                    .collapse.in#collapseinRailsAdd
+                                        .accordion-body
+                                            .form-group.required
+                                                label.col-sm-2.control-label(for='txtHardwareId') Hardware ID
+                                                .col-sm-8
+                                                    input.form-control#txtHardwareId(name='txtHardwareId' type='text' minlength='32' maxlength='32' required)
+                                            .form-group.required
+                                                label.col-sm-2.control-label(for='txtMacAddress') MAC Address
+                                                .col-sm-8
+                                                    input.form-control#txtMacAddress(name='txtMacAddress' type='text' minlength='17' maxlength='17' required)
+                                            .form-group.required
+                                                label.col-sm-2.control-label(for='selAuthorized') Enabled
+                                                .col-sm-8
+                                                    select.form-control#selAuthorized(name='selAuthorized')
+                                                        option
+                                                        option(value='true') Yes
+                                                        option(value='false') No
+                                .row.row-mgn1
+                                    .col-sm-12(style='text-align: right')
+                                        button.btn.btn-primary.ladda-button#btnCreateRail(name='btnCreateRail' type='submit' data-style='expand-left') Create RAIL
+block end_imports
+    <script src="/assets/js/vw-custom/vw-system-rail-create.js"></script>

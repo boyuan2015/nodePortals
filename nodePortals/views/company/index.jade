@@ -1,0 +1,19 @@
+﻿extends ../layout
+
+block title
+    title Companies | TableSafe Portal
+
+block content
+    .welcome
+    img(src='/img/viablewarelogo.png', alt='Viableware Logo')
+    h1 Companies Home Page
+
+    - var isSudoUser = true
+    if isSudoUser
+        p You need to 
+            a(href='/account') login
+    else
+        p Company details (not all retrieved data displayed).
+        p Session::get
+        
+                 

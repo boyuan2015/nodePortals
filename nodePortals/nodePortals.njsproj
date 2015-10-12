@@ -32,7 +32,9 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="controllers\admin_controller.js" />
+    <Compile Include="controllers\company_controller.js" />
     <Compile Include="controllers\home_controller.js" />
+    <Compile Include="controllers\system_controller.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
     <Compile Include="routes\user.js" />
@@ -40,6 +42,7 @@
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="views\admin\index.jade" />
+    <Content Include="views\company\index.jade" />
     <Content Include="views\home\index.jade" />
     <Content Include="views\includes\footer.jade" />
     <Content Include="views\includes\footer_scripts.jade" />
@@ -47,6 +50,7 @@
     <Content Include="views\includes\header.jade" />
     <Content Include="views\includes\navigation.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\system\createRail.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
