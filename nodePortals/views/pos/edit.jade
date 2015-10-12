@@ -1,0 +1,42 @@
+﻿extends ../layout
+
+block title
+    title Configure Point of Sale | TableSafe Portal
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/boostrap-form-helpers/css/bootstrap-formhelpers.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li
+                    a(href='restaurant') Restaurants
+                li
+                    a(href='restaurant/session') CompanyName
+                li Point of Sale
+            h1 Point of Sale
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 Configure
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // Alert box for messages
+                            .alert.alert-success.alert-dismissible#alertBox(role='alert' style='display: none;')
+                                button.close(type='button') 
+                                    span(aria-hidden='true') &times
+                                    span.sr-only Close
+                                strong
+                                    span#alertType [TYPE]:
+                                span#alertMessage [ERROR MESSAGE]
+
+                            // POS Configuration

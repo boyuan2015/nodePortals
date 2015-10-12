@@ -1,0 +1,122 @@
+﻿extends ../layout
+
+block title
+    title Reports | TableSafe Portal
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/plugins/time-picker/jquery-ui-timepicker-addon.css">
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li Report
+            h1 Reporting
+    - var check = true
+    if check
+        .container
+            h4 Transactions
+            .row
+                .col-md-12
+                    .panel.panle-viableware
+                        .panel-heading
+                            h4 Transaction Summary (By Payment Type)
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // data-table Report
+                            #transaction-upper
+                                .transaction-upper-filter
+                                    .form-group
+                                        .row(style='margin-top: 1em;')
+                                            // Data
+                                            label.col-sm-2(for='transactionUpperStartDate') Start Date
+                                            .col-sm-2
+                                                input.calendar#transactionUpperStartDate(type='text')
+                                            label.col-sm-2(for='transactionUpperEndDate') End Date
+                                            .col-sm-2
+                                                input.calendar#transactionUpperEndDate
+                                        .row(style='margin-top: 1em;')
+                                            // Time
+                                            label.col-sm-2(for='transactionUpperStartTime') Start Time
+                                            .col-sm-2
+                                                input.time.ui-timepicker-input.time-text-box#transactionUpperStartTimeH(type='text')
+                                                input.time.ui-timepicker-input.time-text-box#transactionUpperStartTimeM(type='text')
+                                                input.time.ui-timepicker-input.time-text-box#transactionUpperStartTimeS(type='text')
+                                            br
+                                            .row(style='margin-top: 1em;')
+                                                .col-sm-12(style='text-align: right')
+                                                    input.btn.btn-primary#btnTransactionUpperSearch(type='submit' value='Search')
+                                table.table.table-striped.table-bordered.table-hover.table-w-sub-header#dt-Report-transaction-upper(cellpadding='0' cellspacing='0' border='0')
+                                    thread
+                                        tr
+                                            th Tender Type
+                                            th Count
+                                            th Percentage
+                                            th Subtotal
+                                            th Tax
+                                            th Service Charge
+                                            th Gratuity
+                                            th Discount
+                                            th Tip
+                                            th Total
+                                            th.hidden TransactionComplete
+                                    tbody
+                                        tr
+                                            td AMEX
+                                            td 2
+                                            td 7.14%
+                                            td 194.50
+                                            td 14.06
+                                            td 0.00
+                                            td 0.00
+                                            td 17.90
+                                            td 41.72
+                                            td 232.38
+                                            td.hidden 2014/09/02 11:00:00
+                                        tr
+                                            td CASH
+                                            td 2
+                                            td 7.14%
+                                            td 30.00
+                                            td 1.52
+                                            td 0.00
+                                            td 0.00
+                                            td 0.00
+                                            td 0.00
+                                            td 31.52
+                                            td.hidden 2014/09/02 12:00:00
+                                        tr
+                                            td MC
+                                            td 6
+                                            td 21.43%
+                                            td 97.00
+                                            td 4.18
+                                            td 0.00
+                                            td 0.00
+                                            td 2.00
+                                            td 17.28
+                                            td 116.46
+                                            td.hidden 2014/09/02 12:00:00
+                                        tr
+                                            td VISA
+                                            td 18
+                                            td 64.29%
+                                            td 448.71
+                                            td 28.43
+                                            td 0.00
+                                            td 0.00
+                                            td 8.00
+                                            td 95.58
+                                            td 564.72
+                                            td.hidden 2014/09/02 14:00:00
+                            .row(style='margin-top: 1em;')
+                                .col-sm-12(style='text-align: right')
+                                    input.btn.btn-primary#btnExportTransactionUpper(type='submit' value='Download')
+                            // /data-table Report

@@ -34,6 +34,8 @@
     <Compile Include="controllers\admin_controller.js" />
     <Compile Include="controllers\company_controller.js" />
     <Compile Include="controllers\home_controller.js" />
+    <Compile Include="controllers\pos_controller.js" />
+    <Compile Include="controllers\report_controller.js" />
     <Compile Include="controllers\system_controller.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
@@ -50,6 +52,8 @@
     <Content Include="views\includes\header.jade" />
     <Content Include="views\includes\navigation.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\pos\edit.jade" />
+    <Content Include="views\report\index.jade" />
     <Content Include="views\system\createRail.jade" />
   </ItemGroup>
   <ItemGroup>
