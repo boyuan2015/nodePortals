@@ -38,6 +38,7 @@
     <Compile Include="controllers\home_controller.js" />
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
+    <Compile Include="controllers\restaurant_controller.js" />
     <Compile Include="controllers\system_controller.js" />
     <Compile Include="controllers\user_controller.js" />
     <Compile Include="routes\index.js" />
@@ -69,8 +70,10 @@
     <Content Include="views\layout_blank.jade" />
     <Content Include="views\pos\edit.jade" />
     <Content Include="views\report\index.jade" />
+    <Content Include="views\restaurant\index.jade" />
     <Content Include="views\system\createRail.jade" />
     <Content Include="views\user\add.jade" />
+    <Content Include="views\user\create.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />

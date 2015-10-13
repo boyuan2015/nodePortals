@@ -1,0 +1,103 @@
+﻿extends ../layout
+
+block title
+    title Add User
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/boostrap-form-helpers/css/bootstrap-formhelpers.min.css">
+
+block content
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(hef='/') Dashboard
+                li 
+                    a(href='/Restaurant') Restaurants
+                li
+                    a(href='/restaurant/') TODO
+                li 
+                    a(href='/restaurant/') Restaurant Users
+                li Add User
+
+            h1 Add User
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 User Details
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // Alert box for messages
+                            .alert.alert-success.alert-dismissible#alertBox(role='alert' style='display: none;')
+                                button.close(type='button')
+                                    span(aria-hidden='true') &times;
+                                    span.sr-only Close
+                                strong
+                                    span#alertType [TYPE]
+                                    | :
+                                span#alertMessage [ERROR MESSAGE]
+                            .form-horizontal#frmAddUser(name='frmAddUser' method='POST' action='#')
+                                .accordion-group#accordioninpanelAddUser
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinAccountDetails')
+                                            h4 Account Details
+                                        .collapse.in#collapseinAccountDetails
+                                            .accordion-body
+                                                //include ./includes/account_details
+
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title.collapsed(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinPasswordDetails')
+                                            h4 Password
+                                        .collapse.in#collapseinPasswordDetails
+                                            .accordion-body
+                                                //include ./includes/password_details
+
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title.collapsed(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinRestaurantDetails')
+                                            h4 Restaurant
+                                        .collapse.in#collapseinRestaurantDetails
+                                            .accordion-body
+                                                .form-group
+                                                    .checkbox.col-sm-offset-2.checkbox-l-offset
+                                                        label
+                                                            input#chkAssignRestaurant(name='chkAssignRestaurant' type='checkbox' checked='checked')
+                                                            | Assign to Restaurant
+
+                                                .form-group#divRestaurantRole
+                                                    label.col-sm-2.control-label(for='selRestaurantRole') Role
+                                                    .col-sm-8
+                                                        // TODO
+
+                                    - var isSudoUser = true
+                                    if isSudoUser
+                                        .accordion-item(class='collapse.in')
+                                            a.accordion-title.collapsed(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinLegacyDetails')
+                                                h4 Legacy Roles
+                                            .collapse.in#collapseinLegacyDetails
+                                                .accordion-body
+                                                    .form-group
+                                                        .checkbox.col-sm-offset-2.checkbox-l-offset
+                                                            label
+                                                                input#chkAssignLegacyUser(name='chkAssignLegacyUser' type='checkbox')
+                                                                | ROLE_USER
+                                                    .form-group
+                                                        .checkbox.col-sm-offset-2.check-l-offset
+                                                            label
+                                                                input#chkAssignLegacyAdmin(name='chkAssignLegacyAdmin' type='checkbox')
+                                                                | ROLE_ADMIN                                    
+                                    .row.row-mgn1
+                                        .col-sm-12.text-right
+                                            button.btn.btn-primary.ladda-button#btnCreateUser(type='submit' data-style='expand-left') Create User
+                                            input#hidRestaurantId(type='hidden' value='')
+
+block end_imports
+    <script src="/assets/plugins/boostrap-form-helpers/js/bootstrap-formhelpers.min.js"></script>
+    <script src="/assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="/assets/js/vw-custom/vw-user-create.js"></script>
+
+            
