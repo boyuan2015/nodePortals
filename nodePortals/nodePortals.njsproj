@@ -34,6 +34,7 @@
     <Compile Include="controllers\account_controller.js" />
     <Compile Include="controllers\admin_controller.js" />
     <Compile Include="controllers\company_controller.js" />
+    <Compile Include="controllers\hardware_controller.js" />
     <Compile Include="controllers\home_controller.js" />
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
@@ -51,7 +52,12 @@
     <Content Include="views\account\logout.jade" />
     <Content Include="views\account\show.jade" />
     <Content Include="views\admin\index.jade" />
+    <Content Include="views\company\create.jade" />
+    <Content Include="views\company\edit.jade" />
     <Content Include="views\company\index.jade" />
+    <Content Include="views\company\show.jade" />
+    <Content Include="views\emails\auth\reminder.jade" />
+    <Content Include="views\hardware\baseStation.jade" />
     <Content Include="views\home\index.jade" />
     <Content Include="views\includes\footer.jade" />
     <Content Include="views\includes\footer_scripts.jade" />
@@ -72,6 +78,7 @@
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
+    <Folder Include="views\emails\auth\" />
     <Folder Include="views\includes\" />
     <Folder Include="views\home\" />
     <Folder Include="views\account\" />
