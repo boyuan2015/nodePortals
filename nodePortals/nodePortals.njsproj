@@ -39,6 +39,7 @@
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
     <Compile Include="controllers\system_controller.js" />
+    <Compile Include="controllers\user_controller.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
     <Compile Include="routes\user.js" />
@@ -69,6 +70,7 @@
     <Content Include="views\pos\edit.jade" />
     <Content Include="views\report\index.jade" />
     <Content Include="views\system\createRail.jade" />
+    <Content Include="views\user\add.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />

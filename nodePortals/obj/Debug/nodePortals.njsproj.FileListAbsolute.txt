@@ -1,3 +1,5 @@
 F:\bo\nodejs\nodePortals\nodePortals\bin\Microsoft.NodejsTools.WebRole.dll
 C:\bo\sandbox\node\nodePortals\obj\Debug\nodePortals.njsprojResolveAssemblyReference.cache
 C:\bo\sandbox\node\nodePortals\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\BYuan\Documents\nodePortals\nodePortals\obj\Debug\nodePortals.njsprojResolveAssemblyReference.cache
+C:\Users\BYuan\Documents\nodePortals\nodePortals\bin\Microsoft.NodejsTools.WebRole.dll

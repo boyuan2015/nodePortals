@@ -14,6 +14,7 @@ var hardwareController = require('../controllers/hardware_controller');
 var posController = require('../controllers/pos_controller');
 var reportController = require('../controllers/report_controller');
 var systemController = require('../controllers/system_controller');
+var userController = require('../controllers/user_controller');
 
 
 router.use('/', homeController);
@@ -24,5 +25,6 @@ router.use('/hardware', hardwareController);
 router.use('/pos', posController);
 router.use('/report', reportController);
 router.use('/system', systemController);
+router.use('/user', userController);
 
 module.exports = router;

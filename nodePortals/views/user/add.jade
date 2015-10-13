@@ -1,0 +1,71 @@
+﻿extends ../layout
+
+block title
+    title Add Existing User
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/boostrap-form-helpers/css/bootstrap-formhelpers.min.css">
+
+block content
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(hef='/') Dashboard
+                li 
+                    a(href='/Restaurant') Restaurants
+                li
+                    a(href='/restaurant/') TODO
+                li 
+                    a(href='/restaurant/') Restaurant Users
+                li Add Existing User
+
+            h1 Add Existing User
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 User Details
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // Alert box for messages
+                            .alert.alert-success.alert-dismissible#alertBox(role='alert' style='display: none;')
+                                button.close(type='button')
+                                    span(aria-hidden='true') &times;
+                                    span.sr-only Close
+                                strong
+                                    span#alertType [TYPE]
+                                    | :
+                                span#alertMessage [ERROR MESSAGE]
+                            .form-horizontal#frmAddUser(name='frmAddUser' method='POST')
+                                .accordion-group#accordioninpanelAddUser
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinAccountDetails')
+                                            h4 Account Details
+                                        .collapse.in#collapseinAccountDetails
+                                            .accordion-body
+                                                .form-group.required
+                                                    label.col-sm-2.control-label(for='txtUsername') Username
+                                                    .col-sm-10
+                                                        input.form-control#txtUsername(name='txtUsername' type='text')
+
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title.collapsed(data-toggle='collapse' data-parent='#accordioninpanelAddUser' href='#collapseinRestaurantDetails')
+                                            h4 Restaurant Assignment
+                                        .collapse.in#collapseinRestaurantDetails
+                                            .accordion-body
+                                                .form-group.required
+                                                    label.col-sm-2.control-label(for='selRestaurantRole') Role
+                                                    .col-sm-10
+                                                        // TODO
+
+                                    .row.row-mgn1
+                                        .col-sm-12.text-right
+                                            button.btn.btn-primary.ladda-button#btnAddUser(type='submit' data-style='expand-left') Add User
+                                            input#hidRestaurantId(type='hidden' value='')
+
+
+            
