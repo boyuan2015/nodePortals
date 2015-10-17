@@ -7,10 +7,13 @@ function isEmpty(value) {
 
 router.route('/')
     .get(function (req, res, next) {
-    res.render('./account/logout');
+    res.render('./account/index');
 });
 
 router.route('/login')
+    .get(function (req, res, next) {
+        res.render('./account/login');
+    })
     .post(function (req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
@@ -26,5 +29,10 @@ router.route('/login')
     }
     console.log('Username: ' + req.body.username);
 });
+
+router.route('/logout')
+    .get(function (req, res, next) {
+        res.render('./account/logout');
+    });
 
 module.exports = router;

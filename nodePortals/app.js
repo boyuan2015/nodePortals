@@ -13,6 +13,9 @@ var path = require('path');
 //var cookieParser = require('cookie-parser');
 //var cookieSession = require('cookie-session');
 //var nodeSession = require('node-session');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 
 var app = express();
 
@@ -30,14 +33,55 @@ app.use(bodyParser.urlencoded({
 //app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(cookieParser());
-//app.use(cookieSession({ secret: 'tsafe node portal' }));
-//app.use(nodeSession());
+app.use(session({
+    secret: 'tablesafe rail secret',
+    resave: false,
+    saveUninitialized: true
+}));
 
-//app.use(function (req, res, next) {
-//    res.locals.session = req.session;
-//    next();
-//});
+app.use(passport.initialize());
+app.use(passport.session());
+
+//app.use(cookieParser());
+
+app.use(function (req, res, next) {
+    var err = req.session.error,
+        msg = req.session.notice,
+        success = req.session.success;
+    //delete req.session.error;
+    //delete req.session.success;
+    //delete req.session.notice;
+    if (err) res.locals.error = err;
+    if (msg) res.locals.notice = msg;
+    if (success) res.locals.success = success;
+    next();
+});
+
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+        var user = {};
+        user.id = '1234';
+        //User.findOne({ username: username }, function (err, user) {
+        //    if (err) { return done(err); }
+        //    if (!user) {
+        //        return done(null, false, { message: 'Incorrect username.' });
+        //    }
+        //    if (!user.validPassword(password)) {
+        //        return done(null, false, { message: 'Incorrect password.' });
+        //    }
+        //    // the user is valid
+        //    return done(null, user);
+        //});
+        return done(null, user);
+    }
+));
+
+app.post('/account/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}));
 
 // development only
 //if ('development' == app.get('env')) {

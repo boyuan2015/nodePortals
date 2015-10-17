@@ -1,7 +1,7 @@
 ﻿extends ../layout
 
 block title
-    title #{title} | TableSafe Portal
+    | Dashboard
 
 block content
     // content wrap
@@ -18,6 +18,10 @@ block content
                                 a.panel-collapse(href='javascript:;')
                                     i.fa.fa-chevron-up
                         .panel-body
-                            p You are logged in as username
-                            p
-                                a(href='/account/logout') Logout
+                            if Auth.check
+                                p You are logged in as #{Auth.user}
+                                p
+                                    a(href='../account/logout') Logout
+                            else
+                                p You are not signed in. You can login
+                                    a(href='../account/login') &nbsp; here

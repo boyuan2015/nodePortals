@@ -47,9 +47,11 @@
     <Content Include="README.md" />
     <Content Include="views\account\create.jade" />
     <Content Include="views\account\edit.jade" />
+    <Content Include="views\account\editprofile.jade" />
     <Content Include="views\account\index.jade" />
     <Content Include="views\account\login.jade" />
     <Content Include="views\account\logout.jade" />
+    <Content Include="views\account\reset.jade" />
     <Content Include="views\account\show.jade" />
     <Content Include="views\admin\index.jade" />
     <Content Include="views\company\create.jade" />
