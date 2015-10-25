@@ -7,7 +7,7 @@ function isEmpty(value) {
 
 router.route('/')
     .get(function (req, res, next) {
-    res.render('./account/index');
+    res.render('./account/login');
 });
 
 router.route('/login')

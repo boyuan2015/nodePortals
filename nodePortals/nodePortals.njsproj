@@ -39,6 +39,8 @@
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
     <Compile Include="controllers\system_controller.js" />
+    <Compile Include="data\index.js" />
+    <Compile Include="data\users.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
     <Compile Include="routes\user.js" />
@@ -74,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
+    <Folder Include="data\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
