@@ -19,7 +19,7 @@ block content
                                     i.fa.fa-chevron-up
                         .panel-body
                             if Auth.check
-                                p You are logged in as #{Auth.user}
+                                p You are logged in as #{Auth.user.username}
                                 p
                                     a(href='../account/logout') Logout
                             else

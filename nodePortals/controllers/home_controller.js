@@ -10,7 +10,8 @@ router.route('/')
             {
             Auth: {
                 check: req.isAuthenticated(),
-                user: req.session.user
+                user: req.user
+                //user: req.session.user
             }
         }
         );
