@@ -39,7 +39,9 @@
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
     <Compile Include="controllers\system_controller.js" />
+    <Compile Include="data\config.js" />
     <Compile Include="data\index.js" />
+    <Compile Include="data\serviceHelper.js" />
     <Compile Include="data\users.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
@@ -72,6 +74,8 @@
     <Content Include="views\layout_blank.jade" />
     <Content Include="views\pos\edit.jade" />
     <Content Include="views\report\index.jade" />
+    <Content Include="views\report\show.jade" />
+    <Content Include="views\restaurant\index.jade" />
     <Content Include="views\system\createRail.jade" />
   </ItemGroup>
   <ItemGroup>

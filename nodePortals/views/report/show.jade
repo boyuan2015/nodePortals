@@ -1,0 +1,128 @@
+﻿extends ../layout
+
+block title
+    | Report Details
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+
+block content
+    // content wrap
+    #wrap
+        if Auth.check
+            p Status: {{ Sesssion::get('status') }}
+            if Session['status'] == 'Success'
+                // if
+                #page-heading
+                    ol.breadcrumb
+                        li
+                            a(href='/') Dashboard
+                        li 
+                            a(href='/Report') Report
+                        li
+                            a(href='/Report/228954') {{ $Report['id'] }}
+                    h1 Report
+                .container
+                    .row
+                        .col-md-12
+                            .panel.panel-viableware
+                                .panel-heading
+                                    h4 Report Detail
+                                    .options
+                                        a.panel-collapse(href='javascript:;')
+                                            i.fa.fa-chevron-up
+                                .panel-body
+                                    // Report Detail
+                                    .panel-body.Report-detail-panel
+                                        .form-group.required
+                                            label.col-sm-2.control-label(for='selReportOption') Options:
+                                            .col-sm-10
+                                                select.form-control#selReportOption(name='selReportOption' required)
+                                                    option(value='') -Select-
+                                                    opiton(value='EMail') EMail
+                                                    option(value='Refund') Refund
+                                .form-group.email-option.hidden.required
+                                    label.col-sm-2.control-label(for='txtEmailAddress') E-Mail Address:
+                                    .col-sm-10
+                                        input.form-control#txtEmailAddress(name='txtEmailAddress' type='text' required)
+                                .row.details-item(style='padding-top: 40px;')
+                                    .col-sm-5(style=background-color: gainsboro;')
+                                        // data-table Report-Detail
+                                        table.table#dt-Report-detail(cellpadding='0' cellspacing='0' border='0')
+                                            thead
+                                                tr
+                                                    th(style='width: 40%') ITEM
+                                                    th(style='width: 30%') QUANTITY
+                                                    th(style='width: 30%') PRICE
+                                            tbody
+                                                tr
+                                                    td Iced Tea
+                                                    td 1
+                                                    td $ 2.99
+                                                tr
+                                                    td Coke
+                                                    td 1
+                                                    td $ 2.99
+                                                tr
+                                                    td Dinner Salad
+                                                    td 1
+                                                    td $ 5.99
+                                                tr
+                                                    td Caesar Salad
+                                                    td 1
+                                                    td $ 6.49
+                                                tr
+                                                    td 7 oz. Filet
+                                                    td 1
+                                                    td $ 16.99
+                                                tr
+                                                    td Baked Chicken
+                                                    td 1
+                                                    td $ 15.99
+                                                tr
+                                                    td Subtotal
+                                                    td 
+                                                    td $ 51.44
+                                                tr
+                                                    td Taxes
+                                                    td 
+                                                    td $ 5.14
+                                                tr
+                                                    td Tip
+                                                    td
+                                                    td $ 10.29
+                                                tr
+                                                    td Total
+                                                    td
+                                                    td $ 66.87
+                                            div(style='wertical-align: middle; text-align: center; padding-bottom: 40px;')
+                                                img.brand(src='/assets/img/general/viablewareTestImage.png' alt='Viableware')
+                                            // /data-table Report-Detail
+                                        .col-sm-1
+                                            // empty div for seperator div
+                                        .col-sm-6(style='background-color: gainsboro;')
+                                            p Report History:
+                                            br
+                                            .row(style='margin-top: 1em;')
+                                                .form-group
+                                                    label.col-sm-4.control-label(for='lblPaymentID') Payment ID:
+                                                    .col-sm-8
+                                                        label#lblPaymentID(name='lblPaymentId') 1480
+                                                .form-group
+                                                    label.col-sm-4.control-label(for='lblServerName') Server Name:
+                                                    .col-sm-8
+                                                        label#lblServerName(name='lblServerName') TableSafe Test
+                                                .form-group
+                                                    label.col-sm-4.control-label(for='lblPayment') Payment:
+                                                    .col-sm-8
+                                                        label#lblPaymentID(name='lblPayment') $66.87
+                                                .form-group
+                                                    label.col-sm-4.control-label(for='lblRefNumber') Reference Number:
+                                                    .col-sm-8
+                                                        label#lblRefNumber(name='lblRefNumber') V18A3FB86549
+                                            // div-submit-email
+                                            .row.div-submit-email(style='margin-top: 1em;')
+                                                .col-sm-1
+                                                    input.btn.btn-primary#btnSubmitEmail(type='submit' value='Submit a Refund')
+                                            // div-submit-refund
+

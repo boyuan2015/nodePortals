@@ -1,0 +1,21 @@
+﻿extends ../layout
+
+block title
+    | Restaurants List
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li Restaurants
+            h1 Restaurants List
+            .options
+                .btn-toolbar
+                    // TODO if 
+                    a.btn.btn-default.btn-ladda-auto.ladda-button(href='/restaurant/create' data-style='expand-left') Add Restaurant
