@@ -1,0 +1,69 @@
+﻿extends ../layout
+
+block title
+    title Edit User
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/boostrap-form-helpers/css/bootstrap-formhelpers.min.css">
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li Edit Profile
+            h1 Edit Profile: // TODO: userDetails
+        .container
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 User Details
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // Alert box for messages
+                            .alert.alert-success.alert-dismissile#alertBox(role='alert' style='display: none;')
+                                button.close(type='button')
+                                    span(aria-hidden='true') &times;
+                                    span.sr-only Close
+                                strong
+                                    span#alertType [TYPE]
+                                |:
+                                span#alertMesssage [ERROR MESSAGE]
+                            .accordion-group#accordioninpanelAddUser
+                                .accordion-item(class='collapse.in')
+                                    a.accodion-title(data-toggle-'collapse' data-parent='#accordioninpanelAddUser' href='#collapseinAccountDetails')
+                                        h4 Account Details
+                                    .collapse.in#collapseinAccountDetails
+                                        form.form-horizontal#frmEditUser(name='frmEditUser' method='POST' action='#')
+                                            .accordion-body
+                                                include ../user/includes/account_details
+                                                .row.row-mgn1
+                                                    .col-sm-12.text-right
+                                                        button.btn.btn-primary.ladda-button#btnUpdateUser(data-style='expand-left') Update User
+                                                        input#hidUpdateUsername(type='hidden' value='')
+                                // if
+                                .accordion-item(class='collapse.in')
+                                    a.accodion-title(data-toggle-'collapse' data-parent='#accordioninpanelAddUser' href='#collapseinPasswordDetails')
+                                        h4 Change Password
+                                    .collapse#collapseinPasswordDetails
+                                        form.form-horizontal#frmChangePassword(name='frmChangePassword' method='POST' action='#')
+                                            .accordion-body
+                                                include ../user/includes/password_details
+                                                .row.row-mgn1
+                                                    .col-sm-12.text-right
+                                                        button.btn.btn-primary.ladda-button#btnChangePassword(data-style='expand-left') Change Password
+                                                        input#hidChangePasswordUsername(type='hidden' value='')
+                                // endif
+
+block end_imports
+    <script src="/assets/plugins/boostrap-form-helpers/js/bootstrap-formhelpers.min.js"></script>
+    <script src="/assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/assets/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="/assets/js/vw-custom/vw-user-edit.js"></script>
+                                    
+

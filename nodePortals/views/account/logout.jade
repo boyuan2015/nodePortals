@@ -1,0 +1,19 @@
+﻿extends ../layout
+
+block title
+    title Logout | TableSafe Portal
+
+block content
+    .welcome
+        img(src='/img/viablewarelogo.png', alt='Viableware Logo')
+        h1 Account Logout Page
+        p You are now logged out.
+        p Log back in
+            a(href='/account') &nbsp; here
+
+        p
+            - var AuthCheck = false
+            if AuthCheck
+                | Auth Check: Still logged in as TODO: username
+            else
+                | Auth Check: Logged out.

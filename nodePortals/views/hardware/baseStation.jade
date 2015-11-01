@@ -1,0 +1,83 @@
+﻿extends ../layout
+
+block title
+    title Edit Hardware
+
+block head_imports
+    <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="/assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css">
+
+block content
+    // content wrap
+    #wrap
+        #page-heading
+            ol.breadcrumb
+                li
+                    a(href='/') Dashboard
+                li
+                    a(href='/hardware/baseStation') Hardware
+                li Edit Hardware
+            h1 Edit Hardware
+        .container
+            // if
+            .row
+                .col-md-12
+                    .panel.panel-viableware
+                        .panel-heading
+                            h4 Base Station Details
+                            .options
+                                a.panel-collapse(href='javascript:;')
+                                    i.fa.fa-chevron-up
+                        .panel-body
+                            // if
+                            form.form-horizontal#frmCreateOrUpdateBaseStation(name='frmCreateOrUpdateBaseStation' method='POST')
+                                .accordion-group#accordionPanelBaseStation
+                                    // Hardware Configuration
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title(data-toggle='collapse' data-parent='#accordionPanelBaseStation' href='#collapseinHardwareConfig')
+                                            h4 Hardware Configuration
+                                        .collapse.in#collapseinHardwareConfig
+                                            .accordion-body
+                                                .row
+                                                    // HardwareId
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblHardwareId') Hardware ID
+                                                        .col-sm-8
+                                                            input.form-control#txtHardwareId(name='txtHardwareId' type='text' value='')
+
+                                                    // MAC Address
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblMACAddress') MAC Address
+                                                        .col-sm-8
+                                                            input.form-control#txtMacAddress(name='txtMacAddress' type='text' value='')
+
+                                                    // RAIL IP Range
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblRailIpRange') RAIL IP Range
+                                                        .col-sm-8
+                                                            input.form-control#txtRailIpRange(name='txtRailIpRange' type='text' value='')
+
+                                    // URL Configuration
+                                    .accordion-item(class='collapse.in')
+                                        a.accordion-title(data-toggle='collapse' data-parent='#accordionPanelBaseStation' href='#collapseinUrlConfig')
+                                            h4 URL Configuration
+                                        .collapse.in#collapseinUrlConfig
+                                            .accordion-body
+                                                .row
+                                                    // OTA Address
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblOtaAddress') OTA Address
+                                                        .col-sm-8
+                                                            input.form-control#txtOtaAddress(name='txtOtaAddress' type='url' value='')
+
+                                                    // Start Page Address
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblStartPageAddress') Start Page Address
+                                                        .col-sm-8
+                                                            input.form-control#txtStartPageAddress(name='txtStartPageAddress' type='url' value='')
+
+                                                    // SSL Certificate Address
+                                                    .form-group.required
+                                                        label.col-sm-2.control-label(for='lblSslCertificateAddress') SSL Certificate Address
+                                                        .col-sm-8
+                                                            input.form-control#txtSslCertificateAddress(name='txtSslCertificateAddress' type='url' value='')
