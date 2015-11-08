@@ -42,10 +42,12 @@
     <Compile Include="data\config.js" />
     <Compile Include="data\index.js" />
     <Compile Include="data\serviceHelper.js" />
+    <Compile Include="data\tablesafeUserProvider.js" />
     <Compile Include="data\users.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
     <Compile Include="routes\user.js" />
+    <Compile Include="tests\dataTest.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
@@ -81,6 +83,7 @@
   <ItemGroup>
     <Folder Include="controllers\" />
     <Folder Include="data\" />
+    <Folder Include="tests\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
