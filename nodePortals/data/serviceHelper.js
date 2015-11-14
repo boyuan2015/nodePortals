@@ -1,5 +1,5 @@
 ﻿var http = require('http');
-//var _ = require('underscore');
+var _ = require('underscore');
 //var config = require('config');
 var querystring = require('querystring');
 
@@ -19,7 +19,8 @@ ServiceHelper.prototype.get = function (endpoint, data, callback) {
 }
 
 ServiceHelper.prototype.tryInvoke = function (
-	host, port, endpoint, method, data, callback) {
+	host, port, endpoint, method, 
+    exHeaders, data, callback) {
     var dataString = JSON.stringify(data);
     var headers = {};
     
@@ -30,6 +31,10 @@ ServiceHelper.prototype.tryInvoke = function (
             'Content-Type': 'application/json',
             'Content-Length': dataString.length
         };
+    }
+    
+    if (exHeaders != null) {
+        _.extend(headers, exHeaders);
     }
     
     var options = {
