@@ -1,0 +1,58 @@
+﻿extends ../layout_blank
+
+block title
+    title LOgin
+
+block content
+    .focusedform
+        .verticalcenter
+            a(href='/')
+                img.brand(src='/assets/img/logo/table-safe-logo-1-0.png' alt='TableSafe')
+            .panel.panel-primary
+                .panel-body
+                    // Alert box for messages
+                    .alert.alert-success.alert-dismissile#alertBox(role='alert' style='display: none;')
+                        button.close(type='button')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        strong
+                            span#alertType [TYPE]
+                        |:
+                        span#alertMesssage [ERROR MESSAGE]
+
+                    h4.text-center(style='margin-bottom: 25px;') Reset Password | TableSafe Portal
+                    p.text-center Enter the phone number on your account and a new password to reset.
+
+                    .form-group
+                        .col-sm-12
+                            .input-group
+                                span.input-group-addon
+                                    i.fa.fa-user
+                                input.form-control(type='text' value='' readonly)
+
+                    .form-group
+                        .col-sm-12
+                            .input-group
+                                span.input-group-addon
+                                    i.fa.fa-phone
+                                input.form-control#txtChallenge(type='text' value='' readonly name='txtChallenge' placeholder='Phone Number (Digits Only - 5551239876)' required)
+
+                    .form-group
+                        .col-sm-12
+                            .input-group
+                                span.input-group-addon
+                                    i.fa.fa-lock
+                                input.form-control#txtPassword(type='password' value='' readonly name='txtPassword' placeholder='New Password' required)
+
+                .panel-footer
+                    .pull-right
+                        span.btn.btn-primary.ladda-button#btnResetVerify(data-style=expand-left') Reset Password
+                        input#hidToken(type='hidden' value='')
+                    .text-center(style='clear:both;')
+                        p &nbsp;
+                        p
+                            a(href='/account/login') Return to login
+
+block end_imports
+    <script src="/assets/js/vw-custom/vw-account-reset.js"></script>
+

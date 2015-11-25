@@ -6,7 +6,15 @@ var router = express.Router();
 
 router.route('/')
     .get(function (req, res, next) {
-        res.render('./home/index', { title: 'Dashboard' });
+        res.render('./home/index', 
+            {
+            Auth: {
+                check: req.isAuthenticated(),
+                user: req.user
+                //user: req.session.user
+            }
+        }
+        );
     });
 
 module.exports = router;

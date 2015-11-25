@@ -38,20 +38,26 @@
     <Compile Include="controllers\home_controller.js" />
     <Compile Include="controllers\pos_controller.js" />
     <Compile Include="controllers\report_controller.js" />
-    <Compile Include="controllers\restaurant_controller.js" />
     <Compile Include="controllers\system_controller.js" />
-    <Compile Include="controllers\user_controller.js" />
+    <Compile Include="data\config.js" />
+    <Compile Include="data\index.js" />
+    <Compile Include="data\serviceHelper.js" />
+    <Compile Include="data\tablesafeUserProvider.js" />
+    <Compile Include="data\users.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\routes.js" />
     <Compile Include="routes\user.js" />
+    <Compile Include="tests\dataTest.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="views\account\create.jade" />
     <Content Include="views\account\edit.jade" />
+    <Content Include="views\account\editprofile.jade" />
     <Content Include="views\account\index.jade" />
     <Content Include="views\account\login.jade" />
     <Content Include="views\account\logout.jade" />
+    <Content Include="views\account\reset.jade" />
     <Content Include="views\account\show.jade" />
     <Content Include="views\admin\index.jade" />
     <Content Include="views\company\create.jade" />
@@ -70,13 +76,14 @@
     <Content Include="views\layout_blank.jade" />
     <Content Include="views\pos\edit.jade" />
     <Content Include="views\report\index.jade" />
+    <Content Include="views\report\show.jade" />
     <Content Include="views\restaurant\index.jade" />
     <Content Include="views\system\createRail.jade" />
-    <Content Include="views\user\add.jade" />
-    <Content Include="views\user\create.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
+    <Folder Include="data\" />
+    <Folder Include="tests\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

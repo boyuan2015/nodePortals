@@ -1,54 +1,21 @@
 ﻿extends ../layout
 
 block title
-    title Restaurants List
+    | Restaurants List
 
 block head_imports
     <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
 
 block content
-
     // content wrap
     #wrap
         #page-heading
             ol.breadcrumb
                 li
-                    a(hef='/') Dashboard
-                li  Restaurants
-
+                    a(href='/') Dashboard
+                li Restaurants
             h1 Restaurants List
             .options
                 .btn-toolbar
-                    //TODO if
+                    // TODO if 
                     a.btn.btn-default.btn-ladda-auto.ladda-button(href='/restaurant/create' data-style='expand-left') Add Restaurant
-
-        .container 
-            .row
-                .col-md-12
-                    .panel.panel-viableware
-                        .panel-heading 
-                            .options
-                                a.panel-collapse(href='javascript:;')
-                                    i.fa.fa-chevron-up
-                        .panel-body#panelBodyRestaurants
-                            // TODO if
-                            .container-data-table
-                                // data-table restaurants
-                                // TODO if 
-                                table.table.table-striped.table-bordered.table-hover.table-w-sub-header(cellpadding='0' cellspacing='0' border='0')
-                                    thead
-                                        tr
-                                            th(style='width: 10px;') &nbsp;
-                                            th Name
-                                            th Address
-                                            th &nbsp;
-                                    tbody
-                                    // TODO if
-                                    td &nbsp;
-                                    td TODO companyname
-                                    td
-
-block end_imports
-    <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/assets/plugins/datatables/dataTables.bootstrap.js"></script>
-    <script src="/assets/js/vw-custom/vw-restaurants.js"></script>
