@@ -1,5 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
+var UserProvider = require('../data/tablesafeUserProvider');
+var userProvider = new UserProvider();
 
 function isEmpty(value) {
     return (value == null || value.length === 0);
@@ -26,9 +28,19 @@ router.route('/login')
             res_message : 'Please specify a username and password.',
             res_alert_class : 'alert-danger'
         });
+    } else {
+        userProvider.authenticateUser(username, password, function (err, results) {
+            if (err) {
+                console.log(err);
+            } else {
+                // TODO: save 'user_details' session data
+                // TODO: clear 'selectedRestaurant' session data
+                return res.render('/');
+            }
+        });
     }
     console.log('Username: ' + req.body.username);
-});
+    });
 
 router.route('/logout')
     .get(function (req, res, next) {

@@ -7,6 +7,7 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var db = require('./data');
+var validUser = false;
 
 // --------------------------------------------------------
 // Setup local strategy authentication
@@ -92,6 +93,7 @@ app.use(passport.session());
 
 //app.use(cookieParser());
 
+/*
 app.use(function (req, res, next) {
     var err = req.session.error,
         msg = req.session.notice,
@@ -114,6 +116,7 @@ app.post('/account/login',
     failureRedirect: '/account/login',
     failureFlash: true
 }));
+*/
 
 // development only
 //if ('development' == app.get('env')) {
@@ -122,6 +125,16 @@ app.post('/account/login',
 
 //app.get('/', routes.index);
 //app.get('/users', user.list);
+
+/*
+app.all('/*', function (req, res, next) {
+    if ( (validUser == true) || (req.url == '/account/login') ) {
+        next();
+    } else {
+        res.redirect('/account/login');
+    }
+});
+*/
 
 // Specify the main route entry
 app.use('/', routes2);
